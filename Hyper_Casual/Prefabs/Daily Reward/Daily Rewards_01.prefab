@@ -727,8 +727,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4666766123159826600}
+  - component: {fileID: 8962323903857806873}
   m_Layer: 0
-  m_Name: Final Item
+  m_Name: Final Item_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -756,6 +757,25 @@ RectTransform:
   m_AnchoredPosition: {x: -244.41241, y: 0}
   m_SizeDelta: {x: 488.8148, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8962323903857806873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834938461156971694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
+  <NumberOfDay>k__BackingField: 7
+  _getButton: {fileID: 8460603994436989858}
+  _getText: {fileID: 6811025660079382734}
+  _awardReceivers: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &4116459440585993281
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +937,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199e859a87d94d749999f8c7735b393d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyReward
-  _awards: []
+  _awards:
+  - {fileID: 7671303134713982981}
+  - {fileID: 1323591745453556445}
+  - {fileID: 1258100928269947460}
+  - {fileID: 5331335816433164102}
+  - {fileID: 1175328252777829114}
+  - {fileID: 7358841923311419648}
+  - {fileID: 8962323903857806873}
   _minHourToReceiveAward: 12
 --- !u!1 &4972630412695532524
 GameObject:
@@ -1950,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_4
       objectReference: {fileID: 0}
+    - target: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+      propertyPath: <NumberOfDay>k__BackingField
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1960,6 +1991,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
   m_PrefabInstance: {fileID: 2237625760187697438}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5331335816433164102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 2237625760187697438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!1001 &3525978579314300760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2052,6 +2094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_6
       objectReference: {fileID: 0}
+    - target: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+      propertyPath: <NumberOfDay>k__BackingField
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2062,6 +2108,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
   m_PrefabInstance: {fileID: 3525978579314300760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7358841923311419648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 3525978579314300760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!1001 &4360857614031464029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2164,6 +2221,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
   m_PrefabInstance: {fileID: 4360857614031464029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7671303134713982981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 4360857614031464029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!1001 &4949252330311029893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2256,11 +2324,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+      propertyPath: <NumberOfDay>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+--- !u!114 &1323591745453556445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 4949252330311029893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!224 &8337110250088325676 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
@@ -2358,11 +2441,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_5
       objectReference: {fileID: 0}
+    - target: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+      propertyPath: <NumberOfDay>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+--- !u!114 &1175328252777829114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 5097665460113835170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!224 &8188266390632002059 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
@@ -2460,11 +2558,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_3
       objectReference: {fileID: 0}
+    - target: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+      propertyPath: <NumberOfDay>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+--- !u!114 &1258100928269947460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264807710803400280, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
+  m_PrefabInstance: {fileID: 5153452004605821980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284456eeb10e76140b265b193faa4aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuringPlayer_M.DailyItemAward
 --- !u!224 &8113417347826512565 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3971079053758101161, guid: 4f3c4cae790a8144380ae3aaacd952ec, type: 3}
