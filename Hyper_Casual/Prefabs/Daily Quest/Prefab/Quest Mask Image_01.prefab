@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 8815864837825256543}
   - component: {fileID: 3509183360353434290}
   m_Layer: 0
-  m_Name: Fast Game Text
+  m_Name: Quest Take Award  Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
