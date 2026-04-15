@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7433163249515471367}
   - component: {fileID: 5776378184483332766}
   m_Layer: 0
-  m_Name: Group Skin Button
+  m_Name: Tab Skin Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
