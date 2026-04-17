@@ -1,22 +1,8 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 namespace MediaKit_M.SkinChanger
 {
-    public interface ISkinSaveLoader
-    {
-        SkinSave Load();
-    }
-
-    [Serializable]
-    public class SkinSave
-    {
-        public List<int> IdBoughtSkins;
-        public List<int> IdWearSkins;
-    }
-
     public class SkinCollection : MonoBehaviour 
     {
         [SerializeField] private TabSelecter _tabSelecter;
