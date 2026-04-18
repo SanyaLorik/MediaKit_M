@@ -1,5 +1,6 @@
 using SanyaBeerExtension;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +16,14 @@ namespace MediaKit_M.SkinChanger
 
         public event Action<Tab> OnSelected = delegate { };
 
-        private Tab _currentTab;
+        public IReadOnlyCollection<Tab> Tabs => _tabs;
+
+        public Tab CurrentTab { get; private set; }
 
         private void Awake()
         {
-            _currentTab = _tabs[0];
-            ShowTab(_currentTab);
+            CurrentTab = _tabs[0];
+            ShowTab(CurrentTab);
         }
 
         private void OnEnable()
@@ -40,13 +43,13 @@ namespace MediaKit_M.SkinChanger
 
         private void ShowTab(Tab tab)
         {
-            _currentTab.Hide();
-            _currentTab = tab;
-            _currentTab.Show();
+            CurrentTab.Hide();
+            CurrentTab = tab;
+            CurrentTab.Show();
 
-            _scrollRect.content = _currentTab.RectTab;
+            _scrollRect.content = CurrentTab.RectTab;
 
-            OnSelected.Invoke(_currentTab);
+            OnSelected.Invoke(CurrentTab);
         }
     }
 }

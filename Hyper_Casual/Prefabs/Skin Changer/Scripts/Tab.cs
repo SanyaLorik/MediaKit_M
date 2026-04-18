@@ -14,13 +14,19 @@ namespace MediaKit_M.SkinChanger
         [SerializeField] private Button _button;
 
         [Header("Skins")]
+        [SerializeField] private int _groupId;
         [SerializeField] private SkinItem[] _skinItems;
+
+        [Header("Defualt Skins")]
+        [SerializeField] private int _idDefualtSkin;
 
         public event Action<Tab> OnClick = delegate { };
 
         public RectTransform RectTab => _tab;
 
         public IReadOnlyCollection<SkinItem> SkinItems => _skinItems;
+
+        public int GroupId => _groupId;
 
         public void Initialize()
         {
