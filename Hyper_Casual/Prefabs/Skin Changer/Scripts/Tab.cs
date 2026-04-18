@@ -21,7 +21,7 @@ namespace MediaKit_M.SkinChanger
 
         public RectTransform RectTab => _tab;
 
-        public IReadOnlyCollection<SkinItem> SkinItems => _skinItems;
+        public IReadOnlyList<SkinItem> SkinItems => _skinItems;
 
         public int GroupId => _groupId;
 

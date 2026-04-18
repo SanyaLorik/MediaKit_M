@@ -1,29 +1,33 @@
+using System;
 using System.Linq;
-using UnityEngine;
 using UnityEngine.Assertions;
-using Zenject;
 
 namespace MediaKit_M.SkinChanger
 {
-    public class SkinCollection : MonoBehaviour 
+    public class SkinCollection
     {
-        [SerializeField] private TabSelecter _tabSelecter;
-
-        [Inject] private ISkinSaveLoader _loader;
-
+        private TabSelecter _tabSelecter;
         private SkinSave _save;
 
-        private void Awake()
+        private SkinItem _currentWearItem;
+
+        public void Initialize(TabSelecter tabSelecter, SkinSave save)
         {
-            _save = _loader.Load();
+            _tabSelecter = tabSelecter;
+            _save = save;
         }
 
-        private void OnEnable()
+        public void SetupInitial()
+        {
+            UpdateInformation(_tabSelecter.CurrentTab);
+        }
+
+        public void Enable()
         {
             _tabSelecter.OnSelected += OnUpdateInformation;
         }
 
-        private void OnDisable()
+        public void Disable()
         {
             _tabSelecter.OnSelected -= OnUpdateInformation;
         }
@@ -37,8 +41,8 @@ namespace MediaKit_M.SkinChanger
         {
             UnlockBoughts(tab);
 
-            SkinItem wearSkin = GetWearSkin(tab);
-            wearSkin.ShowAsSelected();
+            _currentWearItem = GetWearSkin(tab);
+            _currentWearItem.ShowAsSelected();
         }
 
         private void UnlockBoughts(Tab tab)

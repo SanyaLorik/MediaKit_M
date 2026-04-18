@@ -1,23 +1,31 @@
 using SanyaBeerExtension;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace MediaKit_M.SkinChanger
 {
-    public class SkinApplyer : MonoBehaviour
+    [Serializable]
+    public class SkinApplyer
     {
         [Header("Buttons")]
         [SerializeField] private Button _boughtButton;
         [SerializeField] private Button _selectedButton;
         [SerializeField] private Button _canSelectButton;
 
-        [Header("Tabs")]
-        [SerializeField] private TabSelecter _tabSelecter;
+        private TabSelecter _tabSelecter;
 
-        [Inject] private ISkinSaveLoader _loader;
+        public void Initialize(TabSelecter tabSelecter)
+        {
+            _tabSelecter = tabSelecter;
+        }
 
-        private void OnEnable()
+        public void SetupInitial()
+        {
+            SelectItem(_tabSelecter.CurrentTab.SkinItems[0]);
+        }
+
+        public void Enable()
         {
             _boughtButton.onClick.AddListener(OnBuy);
             _selectedButton.onClick.AddListener(OnSelect);
@@ -30,7 +38,7 @@ namespace MediaKit_M.SkinChanger
             }
         }
 
-        private void OnDisable()
+        public void Disable()
         {
             _boughtButton.onClick.RemoveListener(OnBuy);
             _selectedButton.onClick.RemoveListener(OnSelect);
@@ -59,6 +67,11 @@ namespace MediaKit_M.SkinChanger
         }
 
         private void OnSelectItem(SkinItem item)
+        {
+            SelectItem(item);
+        }
+
+        private void SelectItem(SkinItem item)
         {
             if (item.IsUnlocked == true && item.IsSelected == true)
             {

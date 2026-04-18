@@ -1794,6 +1794,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!1 &3944938506874742852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3235659376595381161}
+  - component: {fileID: 266870034967626136}
+  m_Layer: 0
+  m_Name: SkinChangerComposite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3235659376595381161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944938506874742852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5595394714907005892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &266870034967626136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944938506874742852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ad56b5fc73d7c40b67251aa96a4a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.SkinChangerComposite
+  _tabSelecter:
+    _tabs:
+    - _tab: {fileID: 3394740717230847505}
+      _button: {fileID: 5437229313728660060}
+      _groupId: 1
+      _skinItems:
+      - {fileID: 8625544536666305085}
+      - {fileID: 1001670415837944988}
+      - {fileID: 8226307612792947849}
+      - {fileID: 437768561262029877}
+      - {fileID: 4657642823308069605}
+    - _tab: {fileID: 3173945725250038847}
+      _button: {fileID: 7792522125052065693}
+      _groupId: 2
+      _skinItems:
+      - {fileID: 3658949988103315819}
+      - {fileID: 2271188594709962687}
+      - {fileID: 7332567378967704490}
+      - {fileID: 2111760809093759713}
+      - {fileID: 859146553372320864}
+      - {fileID: 2911271963160644664}
+    - _tab: {fileID: 3731759565448626665}
+      _button: {fileID: 4031869852172640781}
+      _groupId: 3
+      _skinItems:
+      - {fileID: 7759443025279143566}
+      - {fileID: 4089045524795039320}
+      - {fileID: 8063436952567544262}
+      - {fileID: 7437808981230177809}
+      - {fileID: 4796902553808341576}
+      - {fileID: 8437719402221189232}
+      - {fileID: 6114119515839234021}
+    - _tab: {fileID: 8557423869684458802}
+      _button: {fileID: 4468535541149195817}
+      _groupId: 4
+      _skinItems:
+      - {fileID: 715270951394438302}
+      - {fileID: 82627585602032028}
+      - {fileID: 5504566376933243568}
+      - {fileID: 3957467800746812499}
+      - {fileID: 3215648399318776429}
+      - {fileID: 6181451314547625136}
+      - {fileID: 6359854561883050104}
+      - {fileID: 1655604435333959670}
+    - _tab: {fileID: 6367151516247704779}
+      _button: {fileID: 2035332792334035536}
+      _groupId: 5
+      _skinItems:
+      - {fileID: 9065978151858994189}
+      - {fileID: 4569531919549434421}
+      - {fileID: 3337745400627790369}
+      - {fileID: 9034717750651175995}
+      - {fileID: 3197875974819951287}
+      - {fileID: 2776017460918525615}
+      - {fileID: 2960490603405999511}
+      - {fileID: 967878560552028548}
+      - {fileID: 6597634110739504933}
+    _scrollRect: {fileID: 7502607772486890703}
+  _skinApplyer:
+    _boughtButton: {fileID: 2901227317134475890}
+    _selectedButton: {fileID: 2512029612782882532}
+    _canSelectButton: {fileID: 1256202753177302634}
 --- !u!1 &4133787096949981826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,10 +2586,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4101289367696797529}
-  - {fileID: 1499051223983538130}
   - {fileID: 5487122796758807536}
-  - {fileID: 6034915755178740843}
-  - {fileID: 8397058353136837064}
+  - {fileID: 3235659376595381161}
   m_Father: {fileID: 5222362966589331106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2487,111 +2595,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &5480305415199754178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1499051223983538130}
-  - component: {fileID: 8803552415300355927}
-  m_Layer: 0
-  m_Name: TabSelector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1499051223983538130
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480305415199754178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5595394714907005892}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8803552415300355927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480305415199754178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b082715283329484a9b9e45f10a887f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.TabSelecter
-  _tabs:
-  - _tab: {fileID: 3394740717230847505}
-    _button: {fileID: 5437229313728660060}
-    _groupId: 1
-    _skinItems:
-    - {fileID: 8625544536666305085}
-    - {fileID: 1001670415837944988}
-    - {fileID: 8226307612792947849}
-    - {fileID: 437768561262029877}
-    - {fileID: 4657642823308069605}
-  - _tab: {fileID: 3173945725250038847}
-    _button: {fileID: 7792522125052065693}
-    _groupId: 2
-    _skinItems:
-    - {fileID: 3658949988103315819}
-    - {fileID: 2271188594709962687}
-    - {fileID: 7332567378967704490}
-    - {fileID: 2111760809093759713}
-    - {fileID: 859146553372320864}
-    - {fileID: 2911271963160644664}
-  - _tab: {fileID: 3731759565448626665}
-    _button: {fileID: 4031869852172640781}
-    _groupId: 3
-    _skinItems:
-    - {fileID: 7759443025279143566}
-    - {fileID: 4089045524795039320}
-    - {fileID: 8063436952567544262}
-    - {fileID: 7437808981230177809}
-    - {fileID: 4796902553808341576}
-    - {fileID: 8437719402221189232}
-    - {fileID: 6114119515839234021}
-  - _tab: {fileID: 8557423869684458802}
-    _button: {fileID: 4468535541149195817}
-    _groupId: 4
-    _skinItems:
-    - {fileID: 715270951394438302}
-    - {fileID: 82627585602032028}
-    - {fileID: 5504566376933243568}
-    - {fileID: 3957467800746812499}
-    - {fileID: 3215648399318776429}
-    - {fileID: 6181451314547625136}
-    - {fileID: 6359854561883050104}
-    - {fileID: 1655604435333959670}
-  - _tab: {fileID: 6367151516247704779}
-    _button: {fileID: 2035332792334035536}
-    _groupId: 5
-    _skinItems:
-    - {fileID: 9065978151858994189}
-    - {fileID: 4569531919549434421}
-    - {fileID: 3337745400627790369}
-    - {fileID: 9034717750651175995}
-    - {fileID: 3197875974819951287}
-    - {fileID: 2776017460918525615}
-    - {fileID: 2960490603405999511}
-    - {fileID: 967878560552028548}
-    - {fileID: 6597634110739504933}
-  _scrollRect: {fileID: 7502607772486890703}
 --- !u!1 &5701419607873268628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,55 +2727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.SkinLocationActivity
   _location: {fileID: 0}
---- !u!1 &5711100529214800966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6034915755178740843}
-  - component: {fileID: 9183713254232279982}
-  m_Layer: 0
-  m_Name: SkinCollection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6034915755178740843
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5711100529214800966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5595394714907005892}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9183713254232279982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5711100529214800966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18cc20c08e3de4478508e63787fb1c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.SkinCollection
-  _tabSelecter: {fileID: 8803552415300355927}
 --- !u!1 &5783964912155724663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,58 +3199,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &7751778290026383552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8397058353136837064}
-  - component: {fileID: 7180136886210691331}
-  m_Layer: 0
-  m_Name: SkinApplyer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8397058353136837064
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7751778290026383552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5595394714907005892}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7180136886210691331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7751778290026383552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df280c73ecd29946b574b7fe736f9e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.SkinApplyer
-  _boughtButton: {fileID: 2901227317134475890}
-  _selectedButton: {fileID: 2512029612782882532}
-  _canSelectButton: {fileID: 1256202753177302634}
-  _tabSelecter: {fileID: 8803552415300355927}
 --- !u!1 &8042851265662647650
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 namespace MediaKit_M.SkinChanger
 {
-    public class TabSelecter : MonoBehaviour
+    [Serializable]
+    public class TabSelecter
     {
         [Header("Skins")]
         [SerializeField] private Tab[] _tabs;
@@ -20,18 +21,18 @@ namespace MediaKit_M.SkinChanger
 
         public Tab CurrentTab { get; private set; }
 
-        private void Awake()
+        public void SetupInitial()
         {
             CurrentTab = _tabs[0];
             ShowTab(CurrentTab);
         }
 
-        private void OnEnable()
+        public void Enable()
         {
             _tabs.ForEachs(tab => tab.Initialize(), tab => tab.OnClick += OnShowTab);
         }
 
-        private void OnDisable()
+        public void Disable()
         {
             _tabs.ForEachs(tab => tab.Deinitialize(), tab => tab.OnClick -= OnShowTab);
         }
