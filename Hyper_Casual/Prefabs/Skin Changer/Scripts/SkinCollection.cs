@@ -21,8 +21,6 @@ namespace MediaKit_M.SkinChanger
         private void OnEnable()
         {
             _tabSelecter.OnSelected += OnUpdateInformation;
-
-            UpdateInformation(_tabSelecter.CurrentTab);
         }
 
         private void OnDisable()
@@ -46,7 +44,7 @@ namespace MediaKit_M.SkinChanger
         private void UnlockBoughts(Tab tab)
         {
             SkinSet skinSet = _save.SkinSets.FirstOrDefault(skinSet => skinSet.GroupId == tab.GroupId);
-            Assert.IsTrue(skinSet == default, $"No found SkinSet with id: {tab.GroupId}");
+            Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {tab.GroupId}");
 
             foreach (int idBought in skinSet.BoughtIds)
             {
@@ -61,11 +59,11 @@ namespace MediaKit_M.SkinChanger
         public SkinItem GetWearSkin(Tab tab)
         {
             SkinSet skinSet = _save.SkinSets.FirstOrDefault(skinSet => skinSet.GroupId == tab.GroupId);
-            Assert.IsTrue(skinSet == default, $"No found SkinSet with id: {tab.GroupId}");
+            Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {tab.GroupId}");
 
             int id = skinSet.IsEquipped == true ? skinSet.EquippedId : skinSet.BoughtIds[0];
             SkinItem skinItem = tab.SkinItems.FirstOrDefault(skinItem => skinItem.Data.Id == id);
-            Assert.IsTrue(skinItem == default, $"No found SkinItem with id: {id}");
+            Assert.IsFalse(skinItem == default, $"No found SkinItem with id: {id}");
 
             return skinItem;
         }

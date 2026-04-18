@@ -296,7 +296,7 @@ MonoBehaviour:
   _lockedIcon: {fileID: 6808170310476620221}
   _selectedIcon: {fileID: 7564458831759550155}
   <Data>k__BackingField:
-    Id: 0
+    Id: 1
     Prefab: {fileID: 0}
 --- !u!1 &6808170310476620221
 GameObject:

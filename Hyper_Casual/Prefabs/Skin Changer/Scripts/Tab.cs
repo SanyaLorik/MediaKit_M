@@ -17,9 +17,6 @@ namespace MediaKit_M.SkinChanger
         [SerializeField] private int _groupId;
         [SerializeField] private SkinItem[] _skinItems;
 
-        [Header("Defualt Skins")]
-        [SerializeField] private int _idDefualtSkin;
-
         public event Action<Tab> OnClick = delegate { };
 
         public RectTransform RectTab => _tab;
