@@ -27,7 +27,10 @@ namespace MediaKit_M.SkinChanger
         public void ShowAsUnlock()
         {
             _lockedIcon.DisactiveSelf();
+            _selectedIcon.DisactiveSelf();
+
             IsUnlocked = true;
+            IsSelected = false;
         }
 
         public void ShowAsSelected()

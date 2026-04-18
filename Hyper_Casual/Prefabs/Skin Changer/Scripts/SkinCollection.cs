@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine.Assertions;
+using UnityEngine.UIElements;
 
 namespace MediaKit_M.SkinChanger
 {
@@ -8,6 +9,8 @@ namespace MediaKit_M.SkinChanger
     {
         private TabSelecter _tabSelecter;
         private SkinSave _save;
+
+        private SkinItem _currentSkin;
 
         public void Initialize(TabSelecter tabSelecter, SkinSave save)
         {
@@ -39,8 +42,8 @@ namespace MediaKit_M.SkinChanger
         {
             UnlockBoughts(tab);
 
-            SkinItem _currentWearItem = GetWearSkin(tab);
-            _currentWearItem.ShowAsSelected();
+            _currentSkin = GetWearSkin(tab);
+            _currentSkin.ShowAsSelected();
         }
 
         private void UnlockBoughts(Tab tab)
@@ -68,6 +71,19 @@ namespace MediaKit_M.SkinChanger
             Assert.IsFalse(skinItem == default, $"No found SkinItem with id: {id}");
 
             return skinItem;
+        }
+
+        public void SetCurrentWear(SkinItem currentSkin)
+        {
+            _currentSkin?.ShowAsUnlock();
+            _currentSkin = currentSkin;
+            _currentSkin.ShowAsSelected();
+
+            int currentTabId = _tabSelecter.CurrentTab.GroupId;
+            SkinSet skinSet = _save.SkinSets.FirstOrDefault(skinSet => skinSet.GroupId == currentTabId);
+            Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {currentTabId}");
+
+            skinSet.EquippedId = _currentSkin.Data.Id;
         }
     }
 }

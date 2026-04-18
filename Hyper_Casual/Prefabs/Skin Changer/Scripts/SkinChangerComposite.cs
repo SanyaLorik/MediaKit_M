@@ -17,7 +17,7 @@ namespace MediaKit_M.SkinChanger
             SkinSave skinSave = _skinSaveLoader.Load();
 
             _skinCollection.Initialize(_tabSelecter, skinSave);
-            _skinApplyer.Initialize(_tabSelecter);
+            _skinApplyer.Initialize(_tabSelecter, _skinCollection);
         }
 
         private void Start()

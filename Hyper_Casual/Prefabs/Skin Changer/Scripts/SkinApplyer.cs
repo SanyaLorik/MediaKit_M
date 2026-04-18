@@ -14,12 +14,14 @@ namespace MediaKit_M.SkinChanger
         [SerializeField] private Button _canSelectButton;
 
         private TabSelecter _tabSelecter;
+        private SkinCollection _skinCollection;
 
         private SkinItem _currentSkin;
 
-        public void Initialize(TabSelecter tabSelecter)
+        public void Initialize(TabSelecter tabSelecter, SkinCollection skinCollection)
         {
             _tabSelecter = tabSelecter;
+            _skinCollection = skinCollection;
         }
 
         public void SetupInitial()
@@ -71,13 +73,15 @@ namespace MediaKit_M.SkinChanger
 
         private void OnCanSelect()
         {
-
+            _skinCollection.SetCurrentWear(_currentSkin);
+            ShowSelectedButton();
         }
 
         private void OnSelectItem(SkinItem item)
         {
             SelectItem(item);
         }
+
         private void OnSelectItemViaTab(Tab tab)
         {
             SelectItem(tab.SkinItems[0]);
@@ -85,9 +89,7 @@ namespace MediaKit_M.SkinChanger
 
         private void SelectItem(SkinItem item)
         {
-            _currentSkin?.StopSelectAnimation();
-            _currentSkin = item;
-            _currentSkin.StartSelectAnimation();
+            ReloadAnimation(item);
 
             if (item.IsUnlocked == true && item.IsSelected == true)
             {
@@ -123,6 +125,13 @@ namespace MediaKit_M.SkinChanger
             _boughtButton.DisactiveSelf();
             _selectedButton.DisactiveSelf();
             _canSelectButton.ActiveSelf();
+        }
+
+        private void ReloadAnimation(SkinItem item)
+        {
+            _currentSkin?.StopSelectAnimation();
+            _currentSkin = item;
+            _currentSkin.StartSelectAnimation();
         }
     }
 }
