@@ -14,6 +14,13 @@ namespace MediaKit_M.SkinChanger
             new() { GroupId = 4 },
             new() { GroupId = 5 }
         };
+
+        public event Action<List<SkinSet>> OnSetsUpdated;
+
+        public void NotifyAboutUpdateSets()
+        {
+            OnSetsUpdated?.Invoke(SkinSets);
+        }
     }
 
     [Serializable]

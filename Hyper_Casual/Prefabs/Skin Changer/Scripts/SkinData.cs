@@ -7,6 +7,7 @@ namespace MediaKit_M.SkinChanger
     public class SkinData
     {
         public int Id;
+        public int Money;
         public GameObject Prefab;
     }
 }

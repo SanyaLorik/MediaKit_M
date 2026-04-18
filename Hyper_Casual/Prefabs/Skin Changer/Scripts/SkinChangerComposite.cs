@@ -1,3 +1,4 @@
+using Architecture_M;
 using UnityEngine;
 using Zenject;
 
@@ -11,13 +12,15 @@ namespace MediaKit_M.SkinChanger
         private SkinCollection _skinCollection = new();
 
         [Inject] private ISkinSaveLoader _skinSaveLoader;
+        [Inject] private IGameSave _gameSave;
+        [Inject] private NumberFormatter _numberFormatter;
 
         private void Awake()
         {
             SkinSave skinSave = _skinSaveLoader.Load();
 
-            _skinCollection.Initialize(_tabSelecter, skinSave);
-            _skinApplyer.Initialize(_tabSelecter, _skinCollection);
+            _skinCollection.Initialize(_tabSelecter, skinSave, _gameSave);
+            _skinApplyer.Initialize(_tabSelecter, _skinCollection, _numberFormatter);
         }
 
         private void Start()

@@ -297,6 +297,7 @@ MonoBehaviour:
   _selectedIcon: {fileID: 7564458831759550155}
   <Data>k__BackingField:
     Id: 1
+    Money: 1500
     Prefab: {fileID: 0}
   _selectedAnimation: {fileID: 8424267192053593975}
 --- !u!1 &6808170310476620221

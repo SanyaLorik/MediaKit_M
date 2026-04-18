@@ -1,5 +1,6 @@
 using SanyaBeerExtension;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,15 +14,23 @@ namespace MediaKit_M.SkinChanger
         [SerializeField] private Button _selectedButton;
         [SerializeField] private Button _canSelectButton;
 
+        [Header("Texts")]
+        [SerializeField] private TextMeshProUGUI _boughtText;
+
+        [Header("Purchase")]
+        [SerializeField] private PurchaseAdapter _purchaseAdapter;
+
         private TabSelecter _tabSelecter;
         private SkinCollection _skinCollection;
+        private NumberFormatter _numberFormatter;
 
         private SkinItem _currentSkin;
 
-        public void Initialize(TabSelecter tabSelecter, SkinCollection skinCollection)
+        public void Initialize(TabSelecter tabSelecter, SkinCollection skinCollection, NumberFormatter numberFormatter)
         {
             _tabSelecter = tabSelecter;
             _skinCollection = skinCollection;
+            _numberFormatter = numberFormatter;
         }
 
         public void SetupInitial()
@@ -63,7 +72,7 @@ namespace MediaKit_M.SkinChanger
 
         private void OnBuy()
         {
-
+            Buy();
         }
 
         private void OnSelect()
@@ -103,14 +112,26 @@ namespace MediaKit_M.SkinChanger
                 return;
             }
 
-            ShowBoughtButton();
+            bool isInteractable = _purchaseAdapter.CanSpend(item.Data.Money);
+            ShowBoughtButton(isInteractable, item.Data.Money);
         }
 
-        private void ShowBoughtButton()
+        private void Buy()
+        {
+            _skinCollection.AddWear(_currentSkin);
+            _skinCollection.SetCurrentWear(_currentSkin);
+
+            ShowSelectedButton();
+        }
+
+        private void ShowBoughtButton(bool isInteractable = true, int money = 777)
         {
             _boughtButton.ActiveSelf();
             _selectedButton.DisactiveSelf();
             _canSelectButton.DisactiveSelf();
+
+            _boughtButton.interactable = isInteractable;
+            _boughtText.text = _numberFormatter.ValuteFormatter(money);
         }
 
         private void ShowSelectedButton()

@@ -1,7 +1,6 @@
-using System;
+using Architecture_M;
 using System.Linq;
 using UnityEngine.Assertions;
-using UnityEngine.UIElements;
 
 namespace MediaKit_M.SkinChanger
 {
@@ -9,13 +8,15 @@ namespace MediaKit_M.SkinChanger
     {
         private TabSelecter _tabSelecter;
         private SkinSave _save;
+        private IGameSave _gameSave;
 
         private SkinItem _currentSkin;
 
-        public void Initialize(TabSelecter tabSelecter, SkinSave save)
+        public void Initialize(TabSelecter tabSelecter, SkinSave save, IGameSave gameSave)
         {
             _tabSelecter = tabSelecter;
             _save = save;
+            _gameSave = gameSave;
         }
 
         public void SetupInitial()
@@ -44,6 +45,8 @@ namespace MediaKit_M.SkinChanger
 
             _currentSkin = GetWearSkin(tab);
             _currentSkin.ShowAsSelected();
+
+            _save.NotifyAboutUpdateSets();
         }
 
         private void UnlockBoughts(Tab tab)
@@ -84,6 +87,17 @@ namespace MediaKit_M.SkinChanger
             Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {currentTabId}");
 
             skinSet.EquippedId = _currentSkin.Data.Id;
+        }
+
+        public void AddWear(SkinItem currentSkin)
+        {
+            int currentTabId = _tabSelecter.CurrentTab.GroupId;
+            SkinSet skinSet = _save.SkinSets.FirstOrDefault(skinSet => skinSet.GroupId == currentTabId);
+            Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {currentTabId}");
+
+            skinSet.BoughtIds.Add(currentSkin.Data.Id);
+
+            _gameSave.Save();
         }
     }
 }
