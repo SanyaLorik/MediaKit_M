@@ -2768,10 +2768,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5711100529214800966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18cc20c08e3de4478508e63787fb1c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9df280c73ecd29946b574b7fe736f9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MediaKit_M.SkinChanger.SkinCollection
-  _tabSelecter: {fileID: 8803552415300355927}
+  _boughtButton: {fileID: 0}
+  _selectButton: {fileID: 0}
+  _canSelectButton: {fileID: 0}
 --- !u!1 &5783964912155724663
 GameObject:
   m_ObjectHideFlags: 0
