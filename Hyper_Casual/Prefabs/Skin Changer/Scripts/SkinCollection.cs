@@ -9,8 +9,6 @@ namespace MediaKit_M.SkinChanger
         private TabSelecter _tabSelecter;
         private SkinSave _save;
 
-        private SkinItem _currentWearItem;
-
         public void Initialize(TabSelecter tabSelecter, SkinSave save)
         {
             _tabSelecter = tabSelecter;
@@ -41,7 +39,7 @@ namespace MediaKit_M.SkinChanger
         {
             UnlockBoughts(tab);
 
-            _currentWearItem = GetWearSkin(tab);
+            SkinItem _currentWearItem = GetWearSkin(tab);
             _currentWearItem.ShowAsSelected();
         }
 

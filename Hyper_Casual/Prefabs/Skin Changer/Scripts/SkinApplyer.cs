@@ -15,6 +15,8 @@ namespace MediaKit_M.SkinChanger
 
         private TabSelecter _tabSelecter;
 
+        private SkinItem _currentSkin;
+
         public void Initialize(TabSelecter tabSelecter)
         {
             _tabSelecter = tabSelecter;
@@ -31,6 +33,8 @@ namespace MediaKit_M.SkinChanger
             _selectedButton.onClick.AddListener(OnSelect);
             _canSelectButton.onClick.AddListener(OnCanSelect);
 
+            _tabSelecter.OnSelected += OnSelectItemViaTab;
+
             foreach (var tab in _tabSelecter.Tabs)
             {
                 foreach (var skinItem in tab.SkinItems)
@@ -44,11 +48,15 @@ namespace MediaKit_M.SkinChanger
             _selectedButton.onClick.RemoveListener(OnSelect);
             _canSelectButton.onClick.RemoveListener(OnCanSelect);
 
+            _tabSelecter.OnSelected -= OnSelectItemViaTab;
+
             foreach (var tab in _tabSelecter.Tabs)
             {
                 foreach (var skinItem in tab.SkinItems)
                     skinItem.OnClicked -= OnSelectItem;
             }
+
+            _currentSkin?.StopSelectAnimation();
         }
 
         private void OnBuy()
@@ -70,9 +78,17 @@ namespace MediaKit_M.SkinChanger
         {
             SelectItem(item);
         }
+        private void OnSelectItemViaTab(Tab tab)
+        {
+            SelectItem(tab.SkinItems[0]);
+        }
 
         private void SelectItem(SkinItem item)
         {
+            _currentSkin?.StopSelectAnimation();
+            _currentSkin = item;
+            _currentSkin.StartSelectAnimation();
+
             if (item.IsUnlocked == true && item.IsSelected == true)
             {
                 ShowSelectedButton();

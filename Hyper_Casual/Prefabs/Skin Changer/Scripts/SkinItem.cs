@@ -1,6 +1,7 @@
+using Architecture_M;
 using SanyaBeerExtension;
 using System;
-using UnityEngine;
+using UnityEngine; 
 using UnityEngine.EventSystems;
 
 namespace MediaKit_M.SkinChanger
@@ -13,6 +14,9 @@ namespace MediaKit_M.SkinChanger
 
         [field: Header("Data")]
         [field: SerializeField] public SkinData Data { get; private set; }
+
+        [Header("Animation")]
+        [SerializeField] private DOTweenAnimationBase _selectedAnimation;
 
         public event Action<SkinItem> OnClicked = delegate { };
 
@@ -33,6 +37,17 @@ namespace MediaKit_M.SkinChanger
 
             IsUnlocked = true;
             IsSelected = true;
+        }
+
+        public void StartSelectAnimation()
+        {
+            _selectedAnimation.Animate();
+        }
+
+        public void StopSelectAnimation()
+        {
+            _selectedAnimation.Kill();
+            _selectedAnimation.ResetToInitialState();
         }
 
         public void OnPointerClick(PointerEventData eventData)

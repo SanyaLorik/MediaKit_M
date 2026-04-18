@@ -298,6 +298,7 @@ MonoBehaviour:
   <Data>k__BackingField:
     Id: 1
     Prefab: {fileID: 0}
+  _selectedAnimation: {fileID: 8424267192053593975}
 --- !u!1 &6808170310476620221
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +555,7 @@ GameObject:
   - component: {fileID: 6463009271718862735}
   - component: {fileID: 7359596301102938190}
   - component: {fileID: 117144678745620074}
+  - component: {fileID: 8424267192053593975}
   m_Layer: 0
   m_Name: Icon Image
   m_TagString: Untagged
@@ -571,7 +573,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4409520692510704278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,3 +620,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8424267192053593975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040669158298149937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626e96b019042a5449e993f7cf077282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Architecture_M.ScaleDownUpAnimation
+  <Entity>k__BackingField:
+    <Source>k__BackingField: {fileID: 6463009271718862735}
+    <Duration>k__BackingField: 0.76
+    <Ease>k__BackingField: 1
+  <IsAutoStart>k__BackingField: 0
+  _upScale: {x: 1, y: 1, z: 1}
+  _downScale: {x: 1.2, y: 1.2, z: 1.2}
+  _initalScale: {x: 1, y: 1, z: 1}
