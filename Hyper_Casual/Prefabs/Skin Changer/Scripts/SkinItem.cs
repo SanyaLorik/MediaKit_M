@@ -16,15 +16,23 @@ namespace MediaKit_M.SkinChanger
 
         public event Action<SkinItem> OnClicked = delegate { };
 
+        public bool IsSelected { get; private set; } = false;
+
+        public bool IsUnlocked { get; private set; } = false;
+
         public void ShowAsUnlock()
         {
             _lockedIcon.DisactiveSelf();
+            IsUnlocked = true;
         }
 
         public void ShowAsSelected()
         {
             _lockedIcon.DisactiveSelf();
             _selectedIcon.ActiveSelf();
+
+            IsUnlocked = true;
+            IsSelected = true;
         }
 
         public void OnPointerClick(PointerEventData eventData)
