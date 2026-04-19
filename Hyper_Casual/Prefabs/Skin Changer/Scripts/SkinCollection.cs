@@ -2,6 +2,7 @@ using Architecture_M;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
+using UnityEngine.UIElements;
 
 namespace MediaKit_M.SkinChanger
 {
@@ -28,7 +29,7 @@ namespace MediaKit_M.SkinChanger
         {
             UpdateInformation(_tabSelecter.CurrentTab);
         }
-
+        //
         public void Enable()
         {
             _tabSelecter.OnSelected += OnUpdateInformation;
@@ -108,11 +109,11 @@ namespace MediaKit_M.SkinChanger
         // ÂÛÄÀÒÜ ÄÅÔÎËÒÍÎÅ ÇÍÀ×ÅÍÈÅ ÏĞÈ ÑÒÀĞÒÅ È İÂÅÍÒ ÄËß ÏÎËÓ×ÅÍÈß ÍÎÂÃÎ ÑÊÈÍÀ
         private void SetEquippedWear(Tab tab)
         {
-            //int currentTabId = _tabSelecter.CurrentTab.GroupId;
-            //if (_equippedSkins.ContainsKey(currentTabId) == true)
-            //    _equippedSkins[currentTabId] = currentSkin.Data;
-            //else
-            //    _equippedSkins.Add(currentTabId, currentSkin.Data);
+            int tabId = tab.GroupId;
+            if (_equippedSkins.ContainsKey(tabId) == true)
+                _equippedSkins[tabId] = currentSkin.Data;
+            else
+                _equippedSkins.Add(tabId, currentSkin.Data);
         }
     }
 }
