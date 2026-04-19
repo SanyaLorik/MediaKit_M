@@ -2,7 +2,6 @@ using Architecture_M;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
-using UnityEngine.UIElements;
 
 namespace MediaKit_M.SkinChanger
 {
@@ -27,9 +26,15 @@ namespace MediaKit_M.SkinChanger
 
         public void SetupInitial()
         {
-            UpdateInformation(_tabSelecter.CurrentTab);
+            foreach (Tab tab in _tabSelecter.Tabs)
+                UpdateInformation(tab);
+
+            UpdateEquippedWear();
+
+            _save.NotifyAboutUpdateSets();
+            _save.NotifyAboutUpdateWear(_equippedSkins.ToArray());
         }
-        //
+
         public void Enable()
         {
             _tabSelecter.OnSelected += OnUpdateInformation;
@@ -51,8 +56,6 @@ namespace MediaKit_M.SkinChanger
 
             _currentSkin = GetWearSkin(tab);
             _currentSkin.ShowAsSelected();
-
-            _save.NotifyAboutUpdateSets();
         }
 
         private void UnlockBoughts(Tab tab)
@@ -78,6 +81,8 @@ namespace MediaKit_M.SkinChanger
             int id = skinSet.IsEquipped == true ? skinSet.EquippedId : skinSet.BoughtIds[0];
             SkinItem skinItem = tab.SkinItems.FirstOrDefault(skinItem => skinItem.Data.Id == id);
             Assert.IsFalse(skinItem == default, $"No found SkinItem with id: {id}");
+
+            skinSet.EquippedId = id;
 
             return skinItem;
         }
@@ -106,15 +111,21 @@ namespace MediaKit_M.SkinChanger
             _gameSave.Save();
         }
 
-        // ÂÛÄÀÒÜ ÄÅÔÎËÒÍÎÅ ÇÍÀ×ÅÍÈÅ ÏÐÈ ÑÒÀÐÒÅ È ÝÂÅÍÒ ÄËß ÏÎËÓ×ÅÍÈß ÍÎÂÃÎ ÑÊÈÍÀ
-        private void SetEquippedWear(Tab tab)
+        private void UpdateEquippedWear()
         {
-            //SkinSet skinSet = _tabSelecter.
+            foreach (SkinSet skinSet in _save.SkinSets)
+            {
+                Tab tab = _tabSelecter.Tabs.FirstOrDefault(tab => tab.GroupId == skinSet.GroupId);
+                Assert.IsFalse(tab == default, $"No found Tab with id: {skinSet.GroupId}");
 
-            //if (_equippedSkins.ContainsKey(tabId) == true)
-            //    _equippedSkins[tabId] = currentSkin.Data;
-            //else
-            //    _equippedSkins.Add(tabId, currentSkin.Data);
+                SkinItem skinItem = tab.SkinItems.FirstOrDefault(skin => skin.Data.Id == skinSet.EquippedId);
+                Assert.IsFalse(tab == default, $"No found SkinItem with id: {skinSet.EquippedId}");
+
+                if (_equippedSkins.ContainsKey(tab.GroupId) == true)
+                    _equippedSkins[tab.GroupId] = skinItem.Data;
+                else
+                    _equippedSkins.Add(tab.GroupId, skinItem.Data);
+            }
         }
     }
 }

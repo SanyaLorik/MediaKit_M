@@ -16,10 +16,19 @@ namespace MediaKit_M.SkinChanger
         };
 
         public event Action<List<SkinSet>> OnSetsUpdated;
+        public event Action<IReadOnlyList<KeyValuePair<int, SkinData>>> OnWearUpdated;
+
+        public IReadOnlyList<KeyValuePair<int, SkinData>> WearSkins { get; private set; }
 
         public void NotifyAboutUpdateSets()
         {
             OnSetsUpdated?.Invoke(SkinSets);
+        }
+
+        public void NotifyAboutUpdateWear(IReadOnlyList<KeyValuePair<int, SkinData>> keyValuePairs)
+        {
+            WearSkins = keyValuePairs;
+            OnWearUpdated?.Invoke(WearSkins);
         }
     }
 
