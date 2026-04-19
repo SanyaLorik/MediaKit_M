@@ -1,4 +1,5 @@
 using Architecture_M;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
 
@@ -12,11 +13,15 @@ namespace MediaKit_M.SkinChanger
 
         private SkinItem _currentSkin;
 
+        private Dictionary<int, SkinData> _equippedSkins;
+
         public void Initialize(TabSelecter tabSelecter, SkinSave save, IGameSave gameSave)
         {
             _tabSelecter = tabSelecter;
             _save = save;
             _gameSave = gameSave;
+
+            _equippedSkins = new(tabSelecter.Tabs.Count);
         }
 
         public void SetupInitial()
@@ -98,6 +103,16 @@ namespace MediaKit_M.SkinChanger
             skinSet.BoughtIds.Add(currentSkin.Data.Id);
 
             _gameSave.Save();
+        }
+
+        // ÂÛÄÀÒÜ ÄÅÔÎËÒÍÎÅ ÇÍÀ×ÅÍÈÅ ÏĞÈ ÑÒÀĞÒÅ È İÂÅÍÒ ÄËß ÏÎËÓ×ÅÍÈß ÍÎÂÃÎ ÑÊÈÍÀ
+        private void SetEquippedWear(Tab tab)
+        {
+            int currentTabId = _tabSelecter.CurrentTab.GroupId;
+            if (_equippedSkins.ContainsKey(currentTabId) == true)
+                _equippedSkins[currentTabId] = currentSkin.Data;
+            else
+                _equippedSkins.Add(currentTabId, currentSkin.Data);
         }
     }
 }
