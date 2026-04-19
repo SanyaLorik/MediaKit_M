@@ -123,6 +123,8 @@ namespace MediaKit_M.SkinChanger
             _skinCollection.AddWear(_currentSkin);
             _skinCollection.SetCurrentWear(_currentSkin);
 
+            _purchaseAdapter.Spend(_currentSkin.Data.Money);
+
             ShowSelectedButton();
         }
 
