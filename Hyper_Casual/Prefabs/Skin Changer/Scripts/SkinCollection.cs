@@ -109,11 +109,12 @@ namespace MediaKit_M.SkinChanger
         // ÂÛÄÀÒÜ ÄÅÔÎËÒÍÎÅ ÇÍÀ×ÅÍÈÅ ÏĞÈ ÑÒÀĞÒÅ È İÂÅÍÒ ÄËß ÏÎËÓ×ÅÍÈß ÍÎÂÃÎ ÑÊÈÍÀ
         private void SetEquippedWear(Tab tab)
         {
-            int tabId = tab.GroupId;
-            if (_equippedSkins.ContainsKey(tabId) == true)
-                _equippedSkins[tabId] = currentSkin.Data;
-            else
-                _equippedSkins.Add(tabId, currentSkin.Data);
+            //SkinSet skinSet = _tabSelecter.
+
+            //if (_equippedSkins.ContainsKey(tabId) == true)
+            //    _equippedSkins[tabId] = currentSkin.Data;
+            //else
+            //    _equippedSkins.Add(tabId, currentSkin.Data);
         }
     }
 }
