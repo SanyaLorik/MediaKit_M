@@ -11,7 +11,7 @@ namespace MediaKit_M.SkinChanger
         private SkinSave _save;
         private IGameSave _gameSave;
 
-        private SkinItem _currentSkin;
+        public SkinItem CurrentSkin { get; private set; }
 
         private Dictionary<int, SkinData> _equippedSkins;
 
@@ -54,8 +54,8 @@ namespace MediaKit_M.SkinChanger
         {
             UnlockBoughts(tab);
 
-            _currentSkin = GetWearSkin(tab);
-            _currentSkin.ShowAsSelected();
+            CurrentSkin = GetWearSkin(tab);
+            CurrentSkin.ShowAsSelected();
         }
 
         private void UnlockBoughts(Tab tab)
@@ -89,15 +89,20 @@ namespace MediaKit_M.SkinChanger
 
         public void SetCurrentWear(SkinItem currentSkin)
         {
-            _currentSkin?.ShowAsUnlock();
-            _currentSkin = currentSkin;
-            _currentSkin.ShowAsSelected();
+            CurrentSkin?.ShowAsUnlock();
+            CurrentSkin = currentSkin;
+            CurrentSkin.ShowAsSelected();
 
             int currentTabId = _tabSelecter.CurrentTab.GroupId;
             SkinSet skinSet = _save.SkinSets.FirstOrDefault(skinSet => skinSet.GroupId == currentTabId);
             Assert.IsFalse(skinSet == default, $"No found SkinSet with id: {currentTabId}");
 
-            skinSet.EquippedId = _currentSkin.Data.Id;
+            skinSet.EquippedId = CurrentSkin.Data.Id;
+
+            UpdateEquippedWear();
+
+            _save.NotifyAboutUpdateSets();
+            _save.NotifyAboutUpdateWear(_equippedSkins.ToArray());
         }
 
         public void AddWear(SkinItem currentSkin)

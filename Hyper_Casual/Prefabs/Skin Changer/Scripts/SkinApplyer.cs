@@ -36,6 +36,7 @@ namespace MediaKit_M.SkinChanger
         public void SetupInitial()
         {
             SelectItem(_tabSelecter.CurrentTab.SkinItems[0]);
+            _currentSkin = _skinCollection.CurrentSkin;
         }
 
         public void Enable()
@@ -84,6 +85,7 @@ namespace MediaKit_M.SkinChanger
         {
             _skinCollection.SetCurrentWear(_currentSkin);
             ShowSelectedButton();
+            ReloadAnimation(_currentSkin);
         }
 
         private void OnSelectItem(SkinItem item)
