@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 16
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 196, y: 196}
@@ -435,8 +435,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 505946693156431216}
   m_HandleRect: {fileID: 8769587908747985709}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.30476177
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1137,7 +1137,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 16
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 196, y: 196}
@@ -2695,7 +2695,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 16
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 196, y: 196}
@@ -3140,7 +3140,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 16
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 196, y: 196}
@@ -3571,7 +3571,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 16
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 196, y: 196}
