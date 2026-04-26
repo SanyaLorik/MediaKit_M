@@ -12,6 +12,7 @@ namespace MediaKit_M.SkinChanger
         [Header("View")]
         [SerializeField] private RectTransform _tab;
         [SerializeField] private Button _button;
+        [SerializeField] private Image _buttonImage;
 
         [Header("Skins")]
         [SerializeField] private int _groupId;
@@ -43,6 +44,11 @@ namespace MediaKit_M.SkinChanger
         public void Hide()
         {
             _tab.DisactiveSelf();
+        }
+
+        public void SetButtonColor(Color color)
+        {
+            _buttonImage.color = color;
         }
 
         private void OnInvokeClick()

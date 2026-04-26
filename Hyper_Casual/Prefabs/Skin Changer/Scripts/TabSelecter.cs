@@ -15,6 +15,10 @@ namespace MediaKit_M.SkinChanger
         [Header("Content For Scroll")]
         [SerializeField] private ScrollRect _scrollRect;
 
+        [Header("View")]
+        [SerializeField] private Color _selectedColor;
+        [SerializeField] private Color _unselectedColor;
+
         public event Action<Tab> OnSelected = delegate { };
 
         public IReadOnlyCollection<Tab> Tabs => _tabs;
@@ -45,8 +49,12 @@ namespace MediaKit_M.SkinChanger
         private void ShowTab(Tab tab)
         {
             CurrentTab.Hide();
+            CurrentTab.SetButtonColor(_unselectedColor);
+
             CurrentTab = tab;
+
             CurrentTab.Show();
+            CurrentTab.SetButtonColor(_selectedColor);
 
             _scrollRect.content = CurrentTab.RectTab;
 

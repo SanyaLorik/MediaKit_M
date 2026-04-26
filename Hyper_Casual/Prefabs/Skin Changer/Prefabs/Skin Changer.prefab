@@ -435,8 +435,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 505946693156431216}
   m_HandleRect: {fileID: 8769587908747985709}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.29999986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1881,6 +1881,7 @@ MonoBehaviour:
     _tabs:
     - _tab: {fileID: 3394740717230847505}
       _button: {fileID: 5437229313728660060}
+      _buttonImage: {fileID: 8969724108787483333}
       _groupId: 1
       _skinItems:
       - {fileID: 8625544536666305085}
@@ -1890,6 +1891,7 @@ MonoBehaviour:
       - {fileID: 4657642823308069605}
     - _tab: {fileID: 3173945725250038847}
       _button: {fileID: 7792522125052065693}
+      _buttonImage: {fileID: 6569254714397161220}
       _groupId: 2
       _skinItems:
       - {fileID: 3658949988103315819}
@@ -1900,6 +1902,7 @@ MonoBehaviour:
       - {fileID: 2911271963160644664}
     - _tab: {fileID: 3731759565448626665}
       _button: {fileID: 4031869852172640781}
+      _buttonImage: {fileID: 70407818279199380}
       _groupId: 3
       _skinItems:
       - {fileID: 7759443025279143566}
@@ -1911,7 +1914,8 @@ MonoBehaviour:
       - {fileID: 6114119515839234021}
     - _tab: {fileID: 8557423869684458802}
       _button: {fileID: 4468535541149195817}
-      _groupId: 4
+      _buttonImage: {fileID: 652277212980813488}
+      _groupId: 5
       _skinItems:
       - {fileID: 715270951394438302}
       - {fileID: 82627585602032028}
@@ -1923,6 +1927,7 @@ MonoBehaviour:
       - {fileID: 1655604435333959670}
     - _tab: {fileID: 6367151516247704779}
       _button: {fileID: 2035332792334035536}
+      _buttonImage: {fileID: 3112202475217382089}
       _groupId: 5
       _skinItems:
       - {fileID: 9065978151858994189}
@@ -1935,6 +1940,8 @@ MonoBehaviour:
       - {fileID: 967878560552028548}
       - {fileID: 6597634110739504933}
     _scrollRect: {fileID: 7502607772486890703}
+    _selectedColor: {r: 1, g: 0.39607844, b: 0, a: 1}
+    _unselectedColor: {r: 0, g: 0.5803922, b: 1, a: 1}
   _skinApplyer:
     _boughtButton: {fileID: 2901227317134475890}
     _selectedButton: {fileID: 2512029612782882532}
@@ -4863,6 +4870,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &8969724108787483333 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433163249515471367, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+  m_PrefabInstance: {fileID: 1971796096834511042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &1983188192736276944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6307,6 +6325,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2493424267599920126, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
   m_PrefabInstance: {fileID: 4327194861177951491}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6569254714397161220 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433163249515471367, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+  m_PrefabInstance: {fileID: 4327194861177951491}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &7792522125052065693 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5776378184483332766, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
@@ -6946,6 +6975,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &3112202475217382089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433163249515471367, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+  m_PrefabInstance: {fileID: 5482892022664120526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &7966103681572959024 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2493424267599920126, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
@@ -7800,6 +7840,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+--- !u!114 &70407818279199380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433163249515471367, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+  m_PrefabInstance: {fileID: 7484354890029498515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &4031869852172640781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5776378184483332766, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
@@ -8083,6 +8134,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+--- !u!114 &652277212980813488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433163249515471367, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
+  m_PrefabInstance: {fileID: 7938364261528911031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &4468535541149195817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5776378184483332766, guid: cb22bde321cbc4c4f82f5af00fbc37ab, type: 3}
