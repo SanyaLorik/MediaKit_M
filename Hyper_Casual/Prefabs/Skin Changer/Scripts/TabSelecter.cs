@@ -1,6 +1,9 @@
+using Architecture_M;
 using SanyaBeerExtension;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,11 +22,20 @@ namespace MediaKit_M.SkinChanger
         [SerializeField] private Color _selectedColor;
         [SerializeField] private Color _unselectedColor;
 
-        public event Action<Tab> OnSelected = delegate { };
+        [Header("Localization")]
+        [SerializeField] private TextMeshProUGUI _headerText;
 
+        public event Action<Tab> OnSelected = delegate { };
         public IReadOnlyCollection<Tab> Tabs => _tabs;
 
         public Tab CurrentTab { get; private set; }
+
+        private SkinChangerLocalization _localization;
+
+        public void Initialize(SkinChangerLocalization localization)
+        {
+            _localization = localization;
+        }
 
         public void SetupInitial()
         {
@@ -58,7 +70,17 @@ namespace MediaKit_M.SkinChanger
 
             _scrollRect.content = CurrentTab.RectTab;
 
+            UpdateLocalization(CurrentTab);
+
             OnSelected.Invoke(CurrentTab);
+        }
+
+        private void UpdateLocalization(Tab tab)
+        {
+            string id = tab.GroupId.ToString();
+            string text = _localization.Translations.FirstOrDefault(i => i.Id == id).Data;
+
+            _headerText.text = text;
         }
     }
 }

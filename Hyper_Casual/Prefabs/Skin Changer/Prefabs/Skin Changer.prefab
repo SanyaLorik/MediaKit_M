@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8214652188283419042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2032,6 +2032,7 @@ MonoBehaviour:
     _scrollRect: {fileID: 7502607772486890703}
     _selectedColor: {r: 1, g: 0.39607844, b: 0, a: 1}
     _unselectedColor: {r: 0, g: 0.5803922, b: 1, a: 1}
+    _headerText: {fileID: 0}
   _skinApplyer:
     _boughtButton: {fileID: 2901227317134475890}
     _selectedButton: {fileID: 2512029612782882532}
@@ -3502,7 +3503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1034285735770345793
 RectTransform:
   m_ObjectHideFlags: 0
