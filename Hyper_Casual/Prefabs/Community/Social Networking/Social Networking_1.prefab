@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Architecture_M.LinkOpener
   _button: {fileID: 5596033396898327642}
-  _url: https://vk.com/im/channels/-238262818
+  _url: https://yandex.ru/games/developer/43468
 --- !u!1 &2035321111494192165
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Architecture_M.LinkOpener
   _button: {fileID: 3028062529156755361}
-  _url: https://vk.com/im/channels/-238262818
+  _url: https://t.me/birykov_ap
 --- !u!1 &3321708311205528968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Architecture_M.LinkOpener
   _button: {fileID: 3275139535799490543}
-  _url: https://vk.com/im/channels/-238262818
+  _url: https://max.ru/join/UHpoogduLS_Gv5WUKrKf6gN2D93n3_6f4smqpAfpFcE
 --- !u!1 &7533550581349091796
 GameObject:
   m_ObjectHideFlags: 0
