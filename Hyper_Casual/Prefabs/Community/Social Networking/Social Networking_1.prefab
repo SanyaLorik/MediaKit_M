@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 426, y: 196}
-  m_Spacing: {x: 64, y: 0}
+  m_Spacing: {x: 72, y: 38}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1 &5197909299493893435
@@ -1107,7 +1107,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -800, y: -430}
+  m_SizeDelta: {x: -800, y: -396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5511854007961578746
 GameObject:
