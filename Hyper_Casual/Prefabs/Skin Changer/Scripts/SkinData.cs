@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace MediaKit_M.SkinChanger
 {
@@ -8,6 +7,5 @@ namespace MediaKit_M.SkinChanger
     {
         public int Id;
         public int Money;
-        public GameObject Prefab;
     }
 }
