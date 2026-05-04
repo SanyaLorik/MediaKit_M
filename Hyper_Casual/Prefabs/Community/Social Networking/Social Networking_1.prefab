@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Architecture_M.LinkOpener
   _button: {fileID: 3028062529156755361}
-  _url: https://t.me/birykov_ap
+  _url: https://t.me/sead_channel
 --- !u!1 &3321708311205528968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1815,7 @@ GameObject:
   - component: {fileID: 9184015197384922159}
   - component: {fileID: 172696232809147140}
   m_Layer: 5
-  m_Name: Telegram Text
+  m_Name: Max Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
