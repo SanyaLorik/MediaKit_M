@@ -15,8 +15,9 @@ namespace MediaKit_M.SkinChanger
         [field: Header("Data")]
         [field: SerializeField] public SkinData Data { get; private set; }
 
-        [Header("Animation")]
+        [Header("Current Selected Animation")]
         [SerializeField] private DOTweenAnimationBase _selectedAnimation;
+        [SerializeField] private GameObject _selectedPointer;
 
         public event Action<SkinItem> OnClicked = delegate { };
 
@@ -44,11 +45,15 @@ namespace MediaKit_M.SkinChanger
 
         public void StartSelectAnimation()
         {
+            _selectedPointer.ActiveSelf();
+
             _selectedAnimation.Animate();
         }
 
         public void StopSelectAnimation()
         {
+            _selectedPointer.DisactiveSelf();
+
             _selectedAnimation.Kill();
             _selectedAnimation.ResetToInitialState();
         }

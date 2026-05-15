@@ -26,9 +26,6 @@ namespace MediaKit_M.SkinChanger
 
         public void SetupInitial()
         {
-            foreach (Tab tab in _tabSelecter.Tabs)
-                UpdateInformation(tab);
-
             UpdateEquippedWear();
 
             _save.NotifyAboutUpdateSets();
@@ -53,9 +50,7 @@ namespace MediaKit_M.SkinChanger
         private void UpdateInformation(Tab tab)
         {
             UnlockBoughts(tab);
-
-            CurrentSkin = GetWearSkin(tab);
-            CurrentSkin.ShowAsSelected();
+            SetCurrentWear(GetWearSkin(tab));
         }
 
         private void UnlockBoughts(Tab tab)

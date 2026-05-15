@@ -33,12 +33,6 @@ namespace MediaKit_M.SkinChanger
             _numberFormatter = numberFormatter;
         }
 
-        public void SetupInitial()
-        {
-            SelectItem(_tabSelecter.CurrentTab.SkinItems[0]);
-            _currentSkin = _skinCollection.CurrentSkin;
-        }
-
         public void Enable()
         {
             _boughtButton.onClick.AddListener(OnBuy);
@@ -95,7 +89,7 @@ namespace MediaKit_M.SkinChanger
 
         private void OnSelectItemViaTab(Tab tab)
         {
-            SelectItem(tab.SkinItems[0]);
+            SelectItem(_skinCollection.CurrentSkin);
         }
 
         private void SelectItem(SkinItem item)
@@ -157,6 +151,7 @@ namespace MediaKit_M.SkinChanger
             _currentSkin?.StopSelectAnimation();
             _currentSkin = item;
             _currentSkin.StartSelectAnimation();
+            Debug.Log("SC " + item);
         }
     }
 }

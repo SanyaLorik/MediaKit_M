@@ -29,7 +29,6 @@ namespace MediaKit_M.SkinChanger
         {
             _tabSelecter.SetupInitial();
             _skinCollection.SetupInitial();
-            _skinApplyer.SetupInitial();
         }
 
         private void OnEnable()
