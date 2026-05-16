@@ -118,6 +118,8 @@ namespace MediaKit_M.SkinChanger
                 Tab tab = _tabSelecter.Tabs.FirstOrDefault(tab => tab.GroupId == skinSet.GroupId);
                 Assert.IsFalse(tab == default, $"No found Tab with id: {skinSet.GroupId}");
 
+                GetWearSkin(tab);
+
                 SkinItem skinItem = tab.SkinItems.FirstOrDefault(skin => skin.Data.Id == skinSet.EquippedId);
                 Assert.IsFalse(tab == default, $"No found SkinItem with id: {skinSet.EquippedId}");
 
